@@ -1,8 +1,9 @@
 // Browser checks with Playwright and axe. Run with: npm run test:browser
 // 1. No console errors.
 // 2. No sideways scroll from 320 to 1920 px.
-// 3. No WCAG 2.1 A or AA violations found by axe, on a phone and on a desktop.
-// 4. The booking flows work, and visitor input is shown as text, never run as HTML.
+// 3. No WCAG 2.1 A or AA violations found by axe, on a phone and on a desktop, in light and dark.
+// 4. The theme toggle switches to dark, and the choice survives a reload.
+// 5. The booking flows work, and visitor input is shown as text, never run as HTML.
 import { chromium } from "playwright";
 import AxeBuilder from "@axe-core/playwright";
 import { serve } from "./server.mjs";
@@ -12,9 +13,13 @@ const browser = await chromium.launch();
 const errors = [];
 const fail = (message) => errors.push(message);
 
-async function openPage(width, height = 900) {
+async function openPage(width, height = 900, colorScheme = "light") {
   // Reduced motion shows every section at rest, so axe sees the final colours.
-  const context = await browser.newContext({ viewport: { width, height }, reducedMotion: "reduce" });
+  const context = await browser.newContext({
+    viewport: { width, height },
+    reducedMotion: "reduce",
+    colorScheme,
+  });
   const page = await context.newPage();
   page.on("console", (msg) => {
     // The fonts are blocked on purpose below, so their load errors are expected.
@@ -37,9 +42,14 @@ for (const width of [320, 390, 768, 1024, 1440, 1920]) {
   await context.close();
 }
 
-// 3: accessibility
-for (const width of [390, 1440]) {
-  const { page, context } = await openPage(width);
+// 3: accessibility, light and dark (dark comes from the system setting)
+for (const [width, scheme] of [
+  [390, "light"],
+  [1440, "light"],
+  [390, "dark"],
+  [1440, "dark"],
+]) {
+  const { page, context } = await openPage(width, 900, scheme);
   await page.evaluate(() =>
     document.querySelectorAll("[data-reveal],[data-watch]").forEach((el) => el.classList.add("in")),
   );
@@ -47,12 +57,26 @@ for (const width of [390, 1440]) {
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
     .analyze();
   for (const v of result.violations) {
-    fail(`axe at ${width}px: ${v.id} (${v.impact}), ${v.nodes.length} element(s): ${v.help}`);
+    fail(`axe at ${width}px ${scheme}: ${v.id} (${v.impact}), ${v.nodes.length} element(s): ${v.help}`);
   }
   await context.close();
 }
 
-// 4: flows
+// 4: theme toggle
+{
+  const { page, context } = await openPage(1440);
+  const bg = () =>
+    page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue("--bg-page"));
+  const light = await bg();
+  await page.locator("#top .theme").click();
+  if ((await page.getAttribute("#top .theme", "aria-pressed")) !== "true") fail("theme: toggle not pressed");
+  if ((await bg()) === light) fail("theme: page tokens did not change");
+  await page.reload();
+  if ((await page.getAttribute("html", "data-theme")) !== "dark") fail("theme: choice not kept after reload");
+  await context.close();
+}
+
+// 5: flows
 {
   const { page, context } = await openPage(1440);
 
@@ -93,4 +117,6 @@ if (errors.length) {
   console.error("FAILED\n- " + errors.join("\n- "));
   process.exit(1);
 }
-console.log("Browser checks passed: no console errors, no sideways scroll, no axe violations, flows work");
+console.log(
+  "Browser checks passed: no console errors, no sideways scroll, no axe violations in light or dark, theme toggle works, flows work",
+);
