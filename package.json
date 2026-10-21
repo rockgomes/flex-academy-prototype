@@ -1,0 +1,20 @@
+{
+  "name": "flex-academy-prototype",
+  "private": true,
+  "type": "module",
+  "description": "Concept landing page and motion prototype for Flex Academy. Not affiliated with The Flex or Base360.",
+  "scripts": {
+    "test": "npm run test:static && npm run test:html && npm run test:browser",
+    "test:static": "node tests/check.mjs",
+    "test:html": "html-validate index.html",
+    "test:browser": "node tests/browser.mjs",
+    "format": "prettier --write index.html styles.css main.js tests",
+    "og": "node tests/og-image.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "html-validate": "^9.5.0",
+    "playwright": "^1.56.0",
+    "prettier": "^3.6.2"
+  }
+}

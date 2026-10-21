@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en" data-path="launch">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flex Academy · concept landing page</title>
+    <meta
+      name="description"
+      content="A concept landing page and motion prototype for Flex Academy, designed by Rock Gomes. Not affiliated with The Flex or Base360."
+    />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#F4F6F1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Flex Academy · concept landing page" />
+    <meta
+      property="og:description"
+      content="Concept landing page and motion prototype by Rock Gomes. Not affiliated with The Flex or Base360."
+    />
+    <meta property="og:image" content="https://flex-academy-prototype.netlify.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to the content</a>
+
+    <aside class="concept" aria-label="About this page">
+      <div class="wrap">
+        <p>
+          <strong>Concept project.</strong> Not affiliated with The Flex, Base360 or any real Flex Academy.
+          Design and prototype by Rock Gomes. Founder portraits are pixelated on purpose.
+        </p>
+        <a href="https://github.com/rockgomes/flex-academy-prototype">Source code</a>
+      </div>
+    </aside>
+
+    <!-- Sticky bar: appears after the hero (desktop and tablet) -->
+    <div class="sticky" id="sticky" aria-hidden="true">
+      <div class="wrap">
+        <a class="logo" href="#top" tabindex="-1">
+          <svg width="24" height="26" viewBox="0 0 24 26" aria-hidden="true">
+            <path d="M1 11 12 1l11 10v14H1z" />
+          </svg>
+          <span>flex academy</span>
+        </a>
+        <nav class="sticky-links" aria-label="Sections">
+          <ul>
+            <li><a href="#programmes" tabindex="-1">Programmes</a></li>
+            <li><a href="#method" tabindex="-1">Method</a></li>
+            <li><a href="#founders" tabindex="-1">Founders</a></li>
+            <li><a href="#faq" tabindex="-1">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="switch" role="group" aria-label="Choose your path">
+          <button type="button" data-set="launch" aria-pressed="true" tabindex="-1">Starting out</button>
+          <button type="button" data-set="scale" aria-pressed="false" tabindex="-1">I run units</button>
+        </div>
+        <button type="button" class="btn sm only-launch" data-open="launch" tabindex="-1">
+          Reserve <span class="long">&nbsp;my free seat</span>
+        </button>
+        <button type="button" class="btn sm pe only-scale" data-open="scale" tabindex="-1">
+          Book <span class="long">&nbsp;a strategy call</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom action bar: phones only -->
+    <div class="mbar" id="mbar">
+      <button type="button" class="btn only-launch" data-open="launch">Reserve my free webinar seat</button>
+      <button type="button" class="btn pe only-scale" data-open="scale">Book a free strategy call</button>
+    </div>
+
+    <header class="hero" id="top">
+      <div class="wrap">
+        <nav class="nav" aria-label="Main">
+          <a class="logo" href="#top">
+            <svg width="24" height="26" viewBox="0 0 24 26" aria-hidden="true">
+              <path d="M1 11 12 1l11 10v14H1z" />
+            </svg>
+            flex academy
+          </a>
+          <ul>
+            <li><a href="#programmes">Programmes</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="#founders">Founders</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+          <div class="switch" role="group" aria-label="Choose your path">
+            <button type="button" data-set="launch" aria-pressed="true">Starting out</button>
+            <button type="button" data-set="scale" aria-pressed="false">I run units</button>
+          </div>
+          <button type="button" class="btn sm only-launch" data-open="launch">Free webinar</button>
+          <button type="button" class="btn sm pe only-scale" data-open="scale">Strategy call</button>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="mono eyebrow" data-in style="--d: 0.05"
+              >From the founders of The Flex and Base360</span
+            >
+            <h1 data-in style="--d: 0.12">
+              <span class="only-launch">Learn the business behind </span>
+              <span class="only-scale">Run the company behind </span>
+              <span class="accent">every booking.</span>
+            </h1>
+            <p class="lede" data-in style="--d: 0.3">
+              <span class="only-launch">
+                Learn to open your first unit, then run many. The playbook, systems and software behind The
+                Flex, operating furnished homes since 2019.
+              </span>
+              <span class="only-scale">
+                Turn a few units into a real company. The systems, the team and the software behind The Flex,
+                operating furnished homes since 2019.
+              </span>
+            </p>
+            <div data-in style="--d: 0.42">
+              <button type="button" class="btn only-launch" data-open="launch">
+                Reserve my free webinar seat<span class="arr" aria-hidden="true">→</span>
+              </button>
+              <button type="button" class="btn pe only-scale" data-open="scale">
+                Book a free strategy call<span class="arr" aria-hidden="true">→</span>
+              </button>
+            </div>
+            <div data-in style="--d: 0.52">
+              <button type="button" class="link only-launch" data-set="scale">
+                I already run units. Book a strategy call →
+              </button>
+              <button type="button" class="link only-scale" data-set="launch">
+                Just starting out? Reserve a free webinar seat →
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <!-- Desktop calendar: decorative, built in main.js -->
+            <div class="cal-holder" aria-hidden="true">
+              <div class="cal" id="cal">
+                <div class="cal-top">Your calendar <span class="chip">Illustrative</span></div>
+                <div class="cal-days" id="days"></div>
+                <div class="cal-grid"></div>
+                <div id="rows"></div>
+                <div class="today"><b>You are here</b></div>
+              </div>
+              <div class="event" id="event">
+                <span class="mono only-launch">Thu [date] · 60 min · live</span>
+                <span class="mono only-scale">20 to 30 min · free · with the team</span>
+                <h3>
+                  <span class="only-launch">Free webinar: how to open your first unit</span>
+                  <span class="only-scale">Strategy call: plan your next units</span>
+                </h3>
+                <div class="who">
+                  <span class="av">RY</span><span class="av">MB</span>
+                  <span class="only-launch">With Raouf Yousfi and Michael Buggy</span>
+                  <span class="only-scale">With the Flex Academy team</span>
+                </div>
+                <div class="foot">
+                  <span class="only-launch" id="evfoot">Shown in your time zone. Name, email, country.</span>
+                  <span class="only-scale">Four questions first: units, target, city, budget.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone agenda: the same story as the calendar, as a list -->
+            <div class="agenda" data-in style="--d: 0.6">
+              <div class="cal-top">Your calendar <span class="chip">Illustrative</span></div>
+              <div class="ev">
+                <span class="mono only-launch">Thu [date] · 60 min · live</span>
+                <span class="mono only-scale">20 to 30 min · free</span>
+                <b class="only-launch">Free webinar: open your first unit</b>
+                <b class="only-scale">Strategy call: plan your next units</b>
+              </div>
+              <div class="marker" id="marker" aria-hidden="true"><b>You are here</b><i></i></div>
+              <div class="lab" data-marker="launch">Unit 01 · Launch</div>
+              <div class="abar g" style="--i: 0">Find the unit</div>
+              <div class="abar g2" style="--i: 1">Set it up</div>
+              <div class="abar m" style="--i: 2">List it</div>
+              <div class="abar g" style="--i: 3">First guest</div>
+              <div class="lab" data-marker="scale">Units 02 to 04 · Scale</div>
+              <div class="abar p" style="--i: 4">Systems</div>
+              <div class="abar p" style="--i: 5">A team</div>
+              <div class="abar p" style="--i: 6">Base360</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proof mono" data-in style="--d: 0.7">
+          <span>Since 2019</span><span>7 cities</span><span>150+ corporate partners</span
+          ><span>130+ booking channels</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="white" id="truth">
+        <div class="pin">
+          <div class="wrap truth" id="truthBox">
+            <div data-reveal>
+              <span class="mono eyebrow">The hard truth</span>
+              <h2>Listing a flat is easy. <span class="text-g">Running a business is not.</span></h2>
+              <p class="lede">
+                Most courses stop at the listing. The work starts after it: guests, cleaning, pricing, cash
+                and people. That is the part we teach, because it is the part we do every day.
+              </p>
+              <div class="truth-state" aria-live="polite">
+                <div class="a">
+                  <span class="mono">Without a system</span>Twelve things in one day, and they all land on you
+                  at once.
+                </div>
+                <div class="b">
+                  <span class="mono">With a system</span>The same twelve things. Each one has a place, and
+                  half of them run without you.
+                </div>
+              </div>
+            </div>
+            <div class="panel day" id="dayPanel" data-watch>
+              <div class="cal-top">
+                One day, three units <span class="chip">Illustrative</span>
+                <div class="seg" role="group" aria-label="Show the day">
+                  <button type="button" data-sys="0" aria-pressed="true">Without a system</button>
+                  <button type="button" data-sys="1" aria-pressed="false">With a system</button>
+                </div>
+              </div>
+              <div class="day-body" id="day" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="programmes">
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <div>
+              <span class="mono eyebrow">Two programmes, one calendar</span>
+              <h2>One hour,<br />or twelve weeks.</h2>
+            </div>
+            <p class="lede">
+              Both programmes start with a date, not a promise of income. We show you the work, and how to run
+              it.
+            </p>
+          </div>
+          <div class="ptabs" role="group" aria-label="Choose a programme">
+            <button type="button" data-tab="0" aria-pressed="true">Launch · X</button>
+            <button type="button" data-tab="1" aria-pressed="false">Scale · Y</button>
+          </div>
+          <div class="cards" id="cards">
+            <article class="card" data-reveal>
+              <div class="band">
+                <div class="band-top">
+                  <span class="mono">Launch</span><span class="mono">Starts with 1 free hour</span>
+                </div>
+                <div class="vis">
+                  <div class="tile"><i>THU</i>[date]</div>
+                  <div class="vbar">Free live webinar<small>60 min · with the founders</small></div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div>
+                  <h3>Open your first unit, safely.</h3>
+                  <p class="who">For the 9-to-5 leaver. No units yet, or just one.</p>
+                </div>
+                <ol class="list">
+                  <li>Self-paced course</li>
+                  <li>Live group sessions</li>
+                  <li>Templates for your first units</li>
+                  <li>Starts with a free webinar</li>
+                </ol>
+              </div>
+              <div class="card-foot">
+                <div>
+                  <span class="mono price-label">Price</span>
+                  <div class="price"><b>X</b><span>entry price, placeholder</span></div>
+                </div>
+                <button type="button" class="btn" data-open="launch">
+                  Reserve my free webinar seat<span class="arr" aria-hidden="true">→</span>
+                </button>
+              </div>
+            </article>
+            <article class="card sc" data-reveal style="--i: 1">
+              <div class="band">
+                <div class="band-top">
+                  <span class="mono">Scale</span>
+                  <span class="mono d-only">12 weeks · ● group session · ◆ 1:1 with a founder</span>
+                  <span class="mono m-only">Starts with a free call</span>
+                </div>
+                <div class="vis d-only"><div class="weeks" id="weeks" aria-hidden="true"></div></div>
+                <div class="vis m-only">
+                  <div class="tile"><i>WEEKS</i>12</div>
+                  <div class="vbar">Weekly group sessions<small>monthly 1:1 with a founder</small></div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div>
+                  <h3>Turn a few units into a company.</h3>
+                  <p class="who">For operators who run a few units and want a real company.</p>
+                </div>
+                <ol class="list">
+                  <li>12 weeks, weekly group sessions</li>
+                  <li>Monthly 1:1 with a founder</li>
+                  <li>Operator community and SOPs</li>
+                  <li>Base360 access</li>
+                </ol>
+              </div>
+              <div class="card-foot">
+                <div>
+                  <span class="mono price-label">Price</span>
+                  <div class="price"><b>Y</b><span>premium price, placeholder</span></div>
+                </div>
+                <button type="button" class="btn pe" data-open="scale">
+                  Book a free strategy call<span class="arr" aria-hidden="true">→</span>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="pdots" aria-hidden="true"><i class="on"></i><i></i></div>
+          <p class="phint">Swipe, or tap the tabs, to see <span id="phintName">Scale</span></p>
+        </div>
+      </section>
+
+      <section class="white" id="method">
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <div>
+              <span class="mono eyebrow">How it works</span>
+              <h2>First one unit.<br />Then the next ones.</h2>
+            </div>
+            <p class="lede">
+              Each step is a block on the calendar. Launch has four. Scale has three, over twelve weeks.
+            </p>
+          </div>
+          <div class="lane">
+            <div class="lane-intro" data-reveal>
+              <div>
+                <span class="mono">Launch</span>
+                <h3>Open your first unit, safely.</h3>
+              </div>
+              <button type="button" class="link lane-cta" data-open="launch">
+                Reserve my free webinar seat →
+              </button>
+            </div>
+            <ol class="steps">
+              <li class="step" data-reveal style="--i: 0">
+                <span class="n">01</span>
+                <h4>Find the unit</h4>
+                <p>Choose a first unit that pays, in a city that allows it.</p>
+              </li>
+              <li class="step" data-reveal style="--i: 1">
+                <span class="n">02</span>
+                <h4>Set it up</h4>
+                <p>Furnish it and photograph it, so it is move-in ready.</p>
+              </li>
+              <li class="step" data-reveal style="--i: 2">
+                <span class="n">03</span>
+                <h4>List it</h4>
+                <p>Go live where guests already book.</p>
+              </li>
+              <li class="step" data-reveal style="--i: 3">
+                <span class="n">04</span>
+                <h4>First guest</h4>
+                <p>Check-in, cleaning and reviews, done properly.</p>
+              </li>
+            </ol>
+          </div>
+          <div class="lane sc">
+            <div class="lane-intro" data-reveal>
+              <div>
+                <span class="mono">Scale · 12 weeks</span>
+                <h3>Turn a few units into a company.</h3>
+              </div>
+              <button type="button" class="link lane-cta" data-open="scale">
+                Book a free strategy call →
+              </button>
+            </div>
+            <ol class="steps">
+              <li class="step" data-reveal style="--i: 0">
+                <span class="n">01</span>
+                <h4>Systems</h4>
+                <p>Replace manual work with SOPs and automation.</p>
+              </li>
+              <li class="step" data-reveal style="--i: 1">
+                <span class="n">02</span>
+                <h4>A team</h4>
+                <p>Hire and run cleaners, maintenance and guest support.</p>
+              </li>
+              <li class="step" data-reveal style="--i: 2">
+                <span class="n">03</span>
+                <h4>Software</h4>
+                <p>Run pricing, channels and the inbox in Base360.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap tools">
+          <div class="photo" data-reveal>
+            <img
+              src="img/kitchen.jpg"
+              alt="Kitchen of a furnished Flex apartment in London"
+              width="1400"
+              height="933"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="ui a">
+              <span class="mono">Channels</span><b>Airbnb, Booking.com</b
+              ><span>+130 more, from one calendar</span>
+            </div>
+            <div class="ui b">
+              <span class="mono">Unified inbox</span>
+              <div>Guest: what time can I check in?<em>Reply drafted. Illustrative.</em></div>
+            </div>
+            <div class="ui c">
+              <span class="mono">Pricing rule</span><b>Weekend rate, set once</b
+              ><span>Applied on every channel. Illustrative.</span>
+            </div>
+          </div>
+          <div data-reveal>
+            <span class="mono eyebrow">The tools</span>
+            <h2 class="h2-sm">You learn on the system that runs The Flex.</h2>
+            <p class="lede gap-top">
+              Base360 is the software the founders built to run their own homes. In Scale you get access to
+              it, so the lessons and the tools match.
+            </p>
+            <ul class="feat">
+              <li>Channel manager across 130+ platforms</li>
+              <li>AI pricing</li>
+              <li>Unified guest inbox</li>
+              <li>Cleaning and maintenance</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="white" id="founders">
+        <div class="wrap founders">
+          <div data-reveal>
+            <span class="mono eyebrow">The founders</span>
+            <h2>Taught by the people who run it.</h2>
+            <div class="people">
+              <div class="person">
+                <div class="face">
+                  <img
+                    src="img/raouf.jpg"
+                    alt="Portrait of Raouf Yousfi, pixelated"
+                    width="600"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3>Raouf Yousfi</h3>
+                <span class="mono">Co-founder and CEO, The Flex and Base360</span>
+                <p>Co-founded The Flex in 2019. Also co-founded Terra API, a Y Combinator company.</p>
+              </div>
+              <div class="person">
+                <div class="face">
+                  <img
+                    src="img/michael.jpg"
+                    alt="Portrait of Michael Buggy, pixelated"
+                    width="600"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3>Michael Buggy</h3>
+                <span class="mono">Co-founder and COO, The Flex</span>
+                <p>Co-founded The Flex and leads its daily operations.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="panel year" data-watch>
+              <div class="cal-top">The story so far <span class="chip chip-end">Year</span></div>
+              <ol class="year-list">
+                <li class="yr a" style="--i: 0">
+                  <span>2019</span><i></i>
+                  <div>
+                    <b>The Flex starts in London</b
+                    ><small>A few apartments. The founders do the work themselves.</small>
+                  </div>
+                </li>
+                <li class="yr b" style="--i: 1">
+                  <span>THEN</span><i></i>
+                  <div>
+                    <b>More cities</b><small>Paris, Lisbon, Berlin, Algiers, Oran, Constantine.</small>
+                  </div>
+                </li>
+                <li class="yr c" style="--i: 2">
+                  <span>2025</span><i></i>
+                  <div>
+                    <b>Base360 becomes its own company</b
+                    ><small>The software built to run The Flex, now sold to other operators.</small>
+                  </div>
+                </li>
+                <li class="yr d" style="--i: 3">
+                  <span>NOW</span><i></i>
+                  <div>
+                    <b>Flex Academy</b><small>The playbook, the systems and the software, taught.</small>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <blockquote data-reveal>
+              "They started with a few apartments. Raouf moved furniture and met guests himself."
+            </blockquote>
+            <span class="mono">From the Base360 about page</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <div>
+              <span class="mono eyebrow">Your options</span>
+              <h2>Compare your options, honestly.</h2>
+            </div>
+            <p class="lede">
+              You can learn a lot for free. Here is what each option gives you, and what it does not.
+            </p>
+          </div>
+          <div class="table-wrap" data-reveal tabindex="0" role="region" aria-label="Comparison table">
+            <table>
+              <thead>
+                <tr>
+                  <td></td>
+                  <th scope="col">YouTube</th>
+                  <th scope="col">Cheap courses</th>
+                  <th scope="col">Masterminds</th>
+                  <th scope="col" class="us">Flex Academy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Taught by people who run units today</th>
+                  <td>Sometimes</td>
+                  <td>Rarely</td>
+                  <td>Sometimes</td>
+                  <td class="us"><span class="yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">A clear plan, step by step</th>
+                  <td class="no">No</td>
+                  <td>Yes</td>
+                  <td>Sometimes</td>
+                  <td class="us"><span class="yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Live help when you are stuck</th>
+                  <td class="no">No</td>
+                  <td class="no">No</td>
+                  <td>Yes</td>
+                  <td class="us"><span class="yes">Yes</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">The software to run it</th>
+                  <td class="no">No</td>
+                  <td class="no">No</td>
+                  <td class="no">No</td>
+                  <td class="us"><span class="yes">Yes, in Scale</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Price</th>
+                  <td>Free</td>
+                  <td>Low</td>
+                  <td>High</td>
+                  <td class="us">X or Y</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="white" id="faq">
+        <div class="wrap faq">
+          <div data-reveal>
+            <span class="mono eyebrow">FAQ</span>
+            <h2>Questions, answered.</h2>
+            <p class="lede gap-top">Still not sure? Bring your question to the free webinar.</p>
+          </div>
+          <div data-reveal>
+            <details open>
+              <summary>How much time do I need each week?</summary>
+              <p>
+                Launch is self-paced, so you fit it around your job. Plan time for the live group sessions,
+                and for the real work on your first unit: viewings, calls and paperwork. Scale has one group
+                session a week for twelve weeks, and a monthly 1:1 with a founder.
+              </p>
+            </details>
+            <details>
+              <summary>How much money do I need to start?</summary>
+              <p>
+                It depends on your city and your model: renting a flat to sublet with permission, or owning
+                one. That is why the first module is about the numbers for one unit, before you sign anything.
+                We do not promise an income.
+              </p>
+            </details>
+            <details>
+              <summary>Which countries does this work in?</summary>
+              <p>
+                Flex Academy is taught in English and is open to all English-speaking countries, such as the
+                UK, the US, Canada and Australia. The method is the same everywhere. The local rules are not,
+                so we show you how to check yours.
+              </p>
+            </details>
+            <details>
+              <summary>What about local rules and licences?</summary>
+              <p>
+                Short-term rental rules change from city to city: permits, limits on nights, taxes and
+                landlord consent. The programmes show you how to check them before you commit. They are not
+                legal advice.
+              </p>
+            </details>
+            <details>
+              <summary>Is there a refund?</summary>
+              <p>
+                Prices and terms are not set yet. When they are, the refund policy will be on this page, in
+                plain words, before you pay anything.
+              </p>
+            </details>
+            <details>
+              <summary>What happens on the strategy call?</summary>
+              <p>
+                20 to 30 minutes with the team. They look at your units, your target and your city, and tell
+                you if Scale fits. If it does not, they say so and point you to the right first step.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap check">
+          <div class="cover" data-reveal aria-hidden="true">
+            <span class="mono">Flex Academy</span><b>The STR scaling checklist</b>
+            <i class="on" style="--w: 180px"></i><i class="on" style="--w: 150px"></i
+            ><i style="--w: 196px"></i><i style="--w: 130px"></i><i style="--w: 170px"></i>
+          </div>
+          <div data-reveal>
+            <span class="mono eyebrow">Not ready yet?</span>
+            <h2 class="h2-sm">Take the checklist. Decide later.</h2>
+            <p class="lede gap-top">
+              The free STR scaling checklist, by email. One field. No call, no webinar.
+            </p>
+            <form class="inline-form" id="checkForm" novalidate>
+              <label class="sr-only" for="ce">Email</label>
+              <input class="field" id="ce" type="email" placeholder="you@email.com" autocomplete="email" />
+              <button class="btn ink" type="submit">Send me the checklist</button>
+              <label class="opt">
+                <input type="checkbox" id="cw" />
+                Also add me to the waitlist for the next cohort
+              </label>
+            </form>
+            <p class="msg" id="checkMsg" role="alert">This email is not complete. Check it and try again.</p>
+            <p class="msg ok" id="checkOk" role="status"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="wrap">
+          <span class="mono eyebrow" data-reveal>Your next booking</span>
+          <h2 data-reveal>Put the first hour<br />on your calendar.</h2>
+          <div class="doors">
+            <div class="door" data-reveal>
+              <div class="top">
+                <span class="mono">Launch</span><span class="mono">Thu [date] · 60 min · free</span>
+              </div>
+              <h3>Free live webinar: how to open your first unit</h3>
+              <p>For people with no units yet, or just one.</p>
+              <button type="button" class="btn" data-open="launch">
+                Reserve my free webinar seat<span class="arr" aria-hidden="true">→</span>
+              </button>
+            </div>
+            <div class="door sc" data-reveal style="--i: 1">
+              <div class="top">
+                <span class="mono">Scale</span><span class="mono">20 to 30 min · free</span>
+              </div>
+              <h3>Strategy call with the team</h3>
+              <p>For operators who already run a few units.</p>
+              <button type="button" class="btn pe" data-open="scale">
+                Book a free strategy call<span class="arr" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+          <footer>
+            <a class="logo" href="#top">
+              <svg width="24" height="26" viewBox="0 0 24 26" aria-hidden="true">
+                <path d="M1 11 12 1l11 10v14H1z" />
+              </svg>
+              flex academy
+            </a>
+            <nav aria-label="Footer">
+              <a href="https://theflex.global">The Flex</a><a href="https://base360.ai">Base360</a
+              ><a href="#programmes">Programmes</a><a href="#founders">Founders</a><a href="#faq">FAQ</a>
+            </nav>
+            <small>
+              Concept project by Rock Gomes, not affiliated with The Flex or Base360. The forms do not send
+              any data. Interior photo: theflex.global. Founder portraits: base360.ai, pixelated. Prices X and
+              Y and all dates are placeholders.
+            </small>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <!-- Launch: register for the free webinar -->
+    <dialog id="dlg-launch" aria-labelledby="dl-title">
+      <div class="dhead">
+        <div class="tile" aria-hidden="true"><i>THU</i>[date]</div>
+        <div>
+          <b id="dl-title">Free live webinar: how to open your first unit</b>
+          <span class="mono">60 min · [time] in your time zone · with the founders</span>
+        </div>
+        <button type="button" class="x" data-close aria-label="Close">×</button>
+      </div>
+      <form class="dbody step-pane" id="launchForm" novalidate>
+        <label for="ln">Name</label>
+        <input class="field" id="ln" type="text" autocomplete="name" required />
+        <label for="le">Email</label>
+        <input class="field" id="le" type="email" autocomplete="email" required aria-describedby="le-msg" />
+        <p class="msg" id="le-msg" role="alert">This email is not complete. Check it and try again.</p>
+        <label for="lc">Country</label>
+        <select class="field" id="lc">
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>Canada</option>
+          <option>Australia</option>
+          <option>Ireland</option>
+          <option>Other</option>
+        </select>
+        <button class="btn" type="submit" id="launchBtn">Reserve my seat</button>
+        <p class="fine">Name, email, country. Nothing else.</p>
+      </form>
+      <div class="dbody done step-pane" id="launchDone" hidden>
+        <div class="tick" aria-hidden="true">✓</div>
+        <h3 id="launchHi" tabindex="-1">You are in.</h3>
+        <p>Thu [date], [time] in your time zone. We sent the join link to your email.</p>
+        <div class="weekstrip" aria-hidden="true">
+          <span>M</span><span>T</span><span>W</span><span class="on">T</span><span>F</span><span>S</span
+          ><span>S</span>
+        </div>
+        <span class="mono small-label">Add to calendar</span>
+        <div class="addcal">
+          <button type="button">Google</button><button type="button">Apple</button
+          ><button type="button">Outlook</button>
+        </div>
+        <p class="fine left">The invite is not added by itself. Use one of the buttons.</p>
+        <button class="btn ink" data-close type="button">Done</button>
+      </div>
+    </dialog>
+
+    <!-- Scale: book a free strategy call in three steps -->
+    <dialog id="dlg-scale" class="sc" aria-labelledby="ds-title">
+      <div class="dhead">
+        <div>
+          <b id="ds-title">Strategy call with the team</b>
+          <span class="mono" id="ds-sub">20 to 30 min · free · step 1 of 3</span>
+        </div>
+        <button type="button" class="x" data-close aria-label="Close">×</button>
+      </div>
+      <div class="dbody step-pane" id="s1">
+        <span class="q" id="q1">How many units do you run today?</span>
+        <div class="chips" role="group" aria-labelledby="q1" data-q="units">
+          <button type="button">None yet</button><button type="button">1</button
+          ><button type="button">2 to 4</button><button type="button">5 to 9</button
+          ><button type="button">10+</button>
+        </div>
+        <p class="msg" id="units-msg" role="alert">Choose how many units you run, so the team can prepare.</p>
+        <div class="route" id="route">
+          <b>The call is for operators.</b> With no units yet, the free webinar fits you better.
+          <button type="button" class="link text-g" id="toWebinar">Go to the free webinar →</button>
+        </div>
+        <span class="q" id="q2">Where do you want to be in 12 months?</span>
+        <div class="chips" role="group" aria-labelledby="q2" data-q="target">
+          <button type="button">5 units</button><button type="button">10 units</button
+          ><button type="button">20 units</button><button type="button">More</button>
+        </div>
+        <label for="sc-city">Which city?</label>
+        <input class="field" id="sc-city" type="text" autocomplete="address-level2" />
+        <span class="q" id="q4">Budget band for the programme</span>
+        <div class="chips" role="group" aria-labelledby="q4" data-q="budget">
+          <button type="button">Under Y</button><button type="button">Around Y</button
+          ><button type="button">Not sure yet</button>
+        </div>
+        <button class="btn pe" type="button" id="toSlots">
+          Choose a time<span class="arr" aria-hidden="true">→</span>
+        </button>
+      </div>
+      <div class="dbody step-pane" id="s2" hidden>
+        <span class="q" id="q5">Pick a day</span>
+        <div class="chips" role="group" aria-labelledby="q5" data-q="day">
+          <button type="button">Tue 14</button><button type="button">Wed 15</button
+          ><button type="button">Thu 16</button><button type="button">Tue 21</button
+          ><button type="button">Wed 22</button>
+        </div>
+        <span class="q" id="q6">Pick a time, in your time zone</span>
+        <div class="chips" role="group" aria-labelledby="q6" data-q="time">
+          <button type="button">09:30</button><button type="button">11:00</button
+          ><button type="button">14:00</button><button type="button">16:30</button>
+        </div>
+        <span class="q">What we cover in 30 minutes</span>
+        <ol class="list list-tight">
+          <li>Your units today, and your numbers</li>
+          <li>What blocks your growth now</li>
+          <li>If Scale fits you, and the next step</li>
+        </ol>
+        <button class="btn pe" type="button" id="toDone">Confirm the call</button>
+        <p class="fine">Dates and times are illustrative.</p>
+      </div>
+      <div class="dbody done step-pane" id="s3" hidden>
+        <div class="tick" aria-hidden="true">✓</div>
+        <h3 id="scaleHi" tabindex="-1">Your call is booked.</h3>
+        <p>We sent a calendar invite to your email.</p>
+        <dl class="kv" id="kv"></dl>
+        <span class="mono small-label">Add to calendar</span>
+        <div class="addcal">
+          <button type="button">Google</button><button type="button">Apple</button
+          ><button type="button">Outlook</button>
+        </div>
+        <button class="btn ink" data-close type="button">Done</button>
+      </div>
+    </dialog>
+
+    <script src="main.js"></script>
+  </body>
+</html>
