@@ -5,6 +5,7 @@
  *   2. Hero calendar (decorative, built from data)
  *   3. Hard truth: one day without and with a system
  *   4. Programmes on mobile: tabs and swipe
+ *   4b. Theme toggle (light, dark, or follow the system)
  *   5. Path switch (Launch or Scale) and the agenda marker
  *   6. Sticky bar and scroll reveals
  *   7. Dialogs: webinar registration and strategy call booking
@@ -100,9 +101,9 @@ $("#weeks").innerHTML = Array.from(
 /* 3. Hard truth -------------------------------------------------------------- */
 const TONES = {
   s: ["var(--sand)", "var(--sand-d)"],
-  m: ["var(--mint)", "var(--g)"],
-  p: ["var(--pt)", "var(--pe-d)"],
-  n: ["#ECEEE9", "var(--ink)"],
+  m: ["var(--mint)", "var(--launch-text)"],
+  p: ["var(--pt)", "var(--scale-text)"],
+  n: ["var(--bg-sunken)", "var(--ink)"],
 };
 // Each event: [start, end, column, width, title, label, tone] without a system,
 // then [start, end, unit column, title, label, tone] with a system.
@@ -281,6 +282,29 @@ cardsEl.addEventListener(
   },
   { passive: true },
 );
+
+/* 4b. Theme ----------------------------------------------------------------- */
+// The page follows the system theme until the visitor presses the toggle.
+const darkQuery = matchMedia("(prefers-color-scheme: dark)");
+const isDark = () => (root.dataset.theme ? root.dataset.theme === "dark" : darkQuery.matches);
+function syncThemeButtons() {
+  const dark = isDark();
+  $$(".theme").forEach((b) => b.setAttribute("aria-pressed", String(dark)));
+}
+$$(".theme").forEach((b) =>
+  b.addEventListener("click", () => {
+    const next = isDark() ? "light" : "dark";
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem("fa-theme", next);
+    } catch {
+      // Storage can be blocked. The theme still changes for this visit.
+    }
+    syncThemeButtons();
+  }),
+);
+darkQuery.addEventListener("change", syncThemeButtons);
+syncThemeButtons();
 
 /* 5. Path switch ----------------------------------------------------------- */
 function setPath(path) {
